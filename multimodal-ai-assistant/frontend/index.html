@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OmniModal AI Assistant</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+    <div class="bg-shape bg-shape-a"></div>
+    <div class="bg-shape bg-shape-b"></div>
+
+    <div class="container py-4 py-lg-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-xl-10">
+                <div class="card app-card border-0 shadow-lg">
+                    <div class="card-body p-3 p-md-4 p-lg-5">
+                        <header class="mb-3 mb-md-4 d-flex justify-content-between align-items-start gap-3">
+                            <div>
+                                <h1 class="app-title mb-1">OmniModal AI Assistant</h1>
+                                <p class="app-subtitle mb-0">Ask questions using text, images, PDFs, DOCX, CSV, XLSX, or PPTX in one chat.</p>
+                            </div>
+                            <div class="d-flex align-items-center gap-2 flex-wrap justify-content-end">
+                                <span id="userBadge" class="user-badge d-none"></span>
+                                <button id="logoutBtn" class="btn btn-outline-danger btn-sm" type="button">Logout</button>
+                                <button id="themeToggleBtn" class="btn btn-outline-secondary btn-sm" type="button">
+                                    <i class="bi bi-moon-stars me-1"></i>
+                                    <span id="themeLabel">Dark</span>
+                                </button>
+                            </div>
+                        </header>
+
+                        <section id="chatWindow" class="chat-window mb-3" aria-live="polite"></section>
+
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <div id="imageDropZone" class="drop-zone" role="button" tabindex="0">
+                                    <input id="imageInput" class="d-none" type="file" accept=".jpg,.jpeg,.png" />
+                                    <p class="drop-title mb-1">Upload Image</p>
+                                    <p id="imageStatus" class="drop-subtitle mb-0">Drag & drop JPG/PNG or click</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div id="docDropZone" class="drop-zone" role="button" tabindex="0">
+                                    <input id="docInput" class="d-none" type="file" accept=".pdf,.docx,.csv,.xlsx,.pptx" />
+                                    <p class="drop-title mb-1">Upload Document</p>
+                                    <p id="docStatus" class="drop-subtitle mb-0">Drag & drop PDF/DOCX/CSV/XLSX/PPTX or click</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="selectedFiles" class="selected-files mb-2"></div>
+
+                        <div class="d-flex justify-content-between align-items-center mt-1 mb-2">
+                            <p class="manager-title mb-0">Uploaded Files</p>
+                            <button id="refreshFilesBtn" class="btn btn-sm btn-outline-primary" type="button">Refresh</button>
+                        </div>
+                        <div id="fileManager" class="file-manager mb-3"></div>
+
+                        <div class="input-group input-group-lg">
+                            <textarea id="messageInput" class="form-control" rows="2" placeholder="Type your question here..."></textarea>
+                            <button id="sendBtn" class="btn btn-primary send-btn" type="button">
+                                <span id="sendBtnText">Ask</span>
+                                <span id="sendSpinner" class="spinner-border spinner-border-sm d-none"></span>
+                            </button>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-2 mt-3">
+                            <div id="loadingDot" class="spinner-grow spinner-grow-sm text-primary d-none"></div>
+                            <small class="text-muted">Max upload size: 15MB per file</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
