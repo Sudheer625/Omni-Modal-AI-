@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+requests
+python-multipart
+pymupdf
+chromadb
+sentence-transformers
+python-docx
+pandas
+openpyxl
+python-pptx
+sqlalchemy
+python-dotenv
+passlib
+python-jose[cryptography]
+email-validator
